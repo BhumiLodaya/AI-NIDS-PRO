@@ -93,6 +93,8 @@ AI_Threat_Analysis_NIDS/
 │   └── model_training.py     # Training pipeline
 └── README.md                 # Project documentation
 
+```
+
 ## ⚙️ How It Works — Hybrid Pipeline
 
 
