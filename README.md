@@ -116,24 +116,24 @@ AI_Threat_Analysis_NIDS/
 * pip or conda
 
 ### Clone the repository
-git clone https://github.com/yourusername/AI_Threat_Analysis_NIDS.git
-cd AI_Threat_Analysis_NIDS
+* git clone https://github.com/yourusername/AI_Threat_Analysis_NIDS.git
+* cd AI_Threat_Analysis_NIDS
 
 ### Create virtual environment
-python -m venv .venv
+* python -m venv .venv
 
 ## Activate virtual environment
 ### Windows:
-.venv\Scripts\activate
+* .venv\Scripts\activate
 
 ### Mac / Linux:
-source .venv/bin/activate
+* source .venv/bin/activate
 
 ### Install dependencies
-pip install -r requirements.txt
+* pip install -r requirements.txt
 
 ### Run backend server
-python server.py
+* python server.py
 
 ## Launch dashboard
 ### Open threat_scanner_v4.html in your browser
@@ -165,6 +165,7 @@ python server.py
 
 ** Model Accuracy Issues: Confirm model.pkl and scaler.pkl exist in the models/ directory. **
 
+
 ## 🎯 Future Roadmap
 [ ] Live Packet Sniffing (Scapy integration)
 
@@ -176,6 +177,7 @@ python server.py
 
 [ ] Cloud-Based Scaling
 
+
 ## 🤝 Acknowledgments
 CSE-CIC-IDS2018 Dataset – Canadian Institute for Cybersecurity
 
@@ -183,6 +185,7 @@ Scikit-learn & Flask Communities
 
 Cybersecurity Research Community
 
-## 🛡️ AI-NIDS PRO | Built for the next generation of Cybersecurity Professionals
+
+🛡️ AI-NIDS PRO | Built for the next generation of Cybersecurity Professionals
 
 
