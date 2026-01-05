@@ -115,28 +115,28 @@ AI_Threat_Analysis_NIDS/
 * Python 3.8+
 * pip or conda
 
-# Clone the repository
+### Clone the repository
 git clone https://github.com/yourusername/AI_Threat_Analysis_NIDS.git
 cd AI_Threat_Analysis_NIDS
 
-# Create virtual environment
+### Create virtual environment
 python -m venv .venv
 
-# Activate virtual environment
-# Windows:
+## Activate virtual environment
+### Windows:
 .venv\Scripts\activate
 
-# Mac / Linux:
+### Mac / Linux:
 source .venv/bin/activate
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Run backend server
+### Run backend server
 python server.py
 
-# Launch dashboard
-# Open threat_scanner_v4.html in your browser
+## Launch dashboard
+### Open threat_scanner_v4.html in your browser
 
 ## 📡 API Documentation
 ### POST /analyze
