@@ -115,75 +115,57 @@ AI_Threat_Analysis_NIDS/
 * Python 3.8+
 * pip or conda
 
-### Step-by-Step Installation
+# Clone the repository
+git clone https://github.com/yourusername/AI_Threat_Analysis_NIDS.git
+cd AI_Threat_Analysis_NIDS
 
-1. **Clone the Repository**
-   ```bash
-   git clone [https://github.com/yourusername/AI_Threat_Analysis_NIDS.git](https://github.com/yourusername/AI_Threat_Analysis_NIDS.git)
-   cd AI_Threat_Analysis_NIDS
-Create Virtual Environment
-
-Bash
-
+# Create virtual environment
 python -m venv .venv
-Activate Environment
 
-Windows:
-
-Bash
-
+# Activate virtual environment
+# Windows:
 .venv\Scripts\activate
-Mac / Linux:
 
-Bash
-
+# Mac / Linux:
 source .venv/bin/activate
-Install Dependencies
 
-Bash
-
+# Install dependencies
 pip install -r requirements.txt
-Run Backend Server
 
-Bash
-
+# Run backend server
 python server.py
-Launch Dashboard Open threat_scanner_v4.html in your browser.
 
-📡 API Documentation
-POST /analyze
+# Launch dashboard
+# Open threat_scanner_v4.html in your browser
 
-Request Payload:
-
-JSON
-
+## 📡 API Documentation
+### POST /analyze
 {
-  "url": "[http://target.com/dos-attack](http://target.com/dos-attack)"
-}
-Successful Response:
-
-JSON
-
-{
-  "verdict": "MALICIOUS",
-  "label": "DDoS",
-  "confidence": "0.9245",
-  "risk_level": "High",
-  "ip": "104.21.65.122",
-  "flow_metrics": {
-    "duration": "5,000,000 µs",
-    "packets": "1,842",
-    "protocol": "TCP (6)"
+  "request": {
+    "url": "http://target.com/dos-attack"
+  },
+  "response": {
+    "verdict": "MALICIOUS",
+    "label": "DDoS",
+    "confidence": "0.9245",
+    "risk_level": "High",
+    "ip": "104.21.65.122",
+    "flow_metrics": {
+      "duration": "5,000,000 µs",
+      "packets": "1,842",
+      "protocol": "TCP (6)"
+    }
   }
 }
-⚠️ Troubleshooting
-Backend Connection Failed: Ensure server.py is running. Look for ✅ Model loaded in terminal. Ensure port 5000 is not in use.
 
-CORS Errors: Verify flask-cors is installed and initialized in the app.
+## ⚠️ Troubleshooting
+** Backend Connection Failed: Ensure server.py is running. Look for ✅ Model loaded in terminal. Ensure port 5000 is not in use. **
 
-Model Accuracy Issues: Confirm model.pkl and scaler.pkl exist in the models/ directory.
+** CORS Errors: Verify flask-cors is installed and initialized in the app. **
 
-🎯 Future Roadmap
+** Model Accuracy Issues: Confirm model.pkl and scaler.pkl exist in the models/ directory. **
+
+## 🎯 Future Roadmap
 [ ] Live Packet Sniffing (Scapy integration)
 
 [ ] Real-time Threat Visualization
@@ -194,13 +176,13 @@ Model Accuracy Issues: Confirm model.pkl and scaler.pkl exist in the models/ dir
 
 [ ] Cloud-Based Scaling
 
-🤝 Acknowledgments
+## 🤝 Acknowledgments
 CSE-CIC-IDS2018 Dataset – Canadian Institute for Cybersecurity
 
 Scikit-learn & Flask Communities
 
 Cybersecurity Research Community
 
-🛡️ AI-NIDS PRO | Built for the next generation of Cybersecurity Professionals
+## 🛡️ AI-NIDS PRO | Built for the next generation of Cybersecurity Professionals
 
 
