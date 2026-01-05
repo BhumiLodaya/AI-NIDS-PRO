@@ -1,173 +1,166 @@
-🛡️ AI-NIDS PRO: Professional Hybrid Threat Analysis
+# 🛡️ AI-NIDS PRO  
+### Professional Hybrid Threat Analysis System
 
-AI-NIDS PRO is an enterprise-grade threat intelligence and Network Intrusion Detection System (NIDS). It bridges the critical gap between high-level user activity (URLs) and low-level behavioral network telemetry (Flows), utilizing a Random Forest model trained on the CSE-CIC-IDS2018 dataset to detect threats with 99.8% accuracy.
+![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)
+![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 
-🚀 Overview
+**AI-NIDS PRO** is an enterprise-grade **AI-powered Network Intrusion Detection System (NIDS)** designed to bridge the gap between **high-level user activity (URLs)** and **low-level network behavior (flows)**.
 
-In modern cybersecurity, traditional signature-based detection often misses "Zero-Day" exploits. AI-NIDS PRO solves this by focusing on behavioral patterns. By analyzing 78 distinct network flow features—such as packet timing, volume, and protocol specifics—it can identify malicious intent even if the URL or IP has never been seen before.
+The system leverages a **Random Forest classifier** trained on the **CSE-CIC-IDS2018 dataset**, achieving **99.8% detection accuracy**, and focuses on **behavioral threat analysis** to identify even **zero-day attacks**.
 
-✨ Features
+---
 
-Modern Security UI – A high-fidelity React dashboard featuring glassmorphism, neon accents, and real-time scanline animations for a professional SOC aesthetic.
+## 🚀 Overview
 
-Hybrid Analysis Logic – A unique translation layer that resolves Application-Layer URLs into simulated Transport-Layer Network Flows for deep inspection.
+Traditional signature-based security systems often fail against **unknown or evolving threats**. AI-NIDS PRO overcomes this limitation by analyzing **behavioral network flow patterns** rather than relying solely on known signatures.
 
-Educational Intelligence Layer – Interactive tooltips and sidebars that explain complex NIDS metrics (e.g., Dst Port, Flow Duration, Protocol Flags) for junior analysts.
+By examining **78 network flow features**—including packet timing, volume, protocol behavior, and flow duration—the system can detect malicious intent **even when the URL or IP address has never been seen before**.
 
-Context-Aware Risk Assessment – Intelligent scoring logic that suppresses false positives; Benign traffic is always categorized as Low Risk, regardless of model confidence.
 
-Multi-Class Threat Intelligence – Goes beyond binary detection to specifically identify DDoS, Brute Force, Botnets, Infiltration, and Port Scans.
 
-Forensic Audit Logging – Automatic, immutable logging of all detections into threat_logs.csv, recording timestamps, resolved IPs, and confidence scores.
+---
 
-📊 Attack Taxonomy
+## ✨ Key Features
 
-The system is trained to identify and categorize traffic into seven distinct profiles:
+- **🎨 Modern Security UI** High-fidelity React dashboard with glassmorphism, neon accents, and real-time scanline animations for a professional SOC look.
 
-Class
+- **🔗 Hybrid Analysis Logic** Translates application-layer URLs into simulated transport-layer network flows for deep inspection.
 
-Description
+- **🎓 Educational Intelligence Layer** Interactive tooltips explain complex NIDS metrics (e.g., *Dst Port*, *Flow Duration*, *Protocol Flags*) for junior analysts.
 
-Network Signature
+- **🧠 Context-Aware Risk Assessment** Intelligent scoring logic suppresses false positives—**benign traffic is always marked Low Risk**, regardless of confidence score.
 
-DDoS
+- **🧬 Multi-Class Threat Detection** Identifies DDoS, Brute Force, Botnets, Infiltration, Port Scans, and Web Attacks.
 
-Distributed Denial of Service
+- **📁 Forensic Audit Logging** Automatically logs all detections into `threat_logs.csv` with timestamps, IPs, labels, and confidence scores.
 
-High packet volume, short duration, flooding patterns.
+---
 
-Brute Force
+## 📊 Attack Taxonomy
 
-Credential Cracking
+| Class | Description | Network Signature |
+| :--- | :--- | :--- |
+| **DDoS** | Distributed Denial of Service | High packet volume, short duration, flooding patterns |
+| **Brute Force** | Credential Cracking | Repetitive small packets targeting ports 22, 80, 443 |
+| **Bot** | Botnet Activity | Persistent heartbeat connections, C2 ports |
+| **Infiltration** | Backdoor / Exploits | Stealthy flows, low packet count, long duration |
+| **PortScan** | Network Reconnaissance | Sequential or random port probing |
+| **Web Attack** | Phishing / Malware | URL heuristics + anomalous download flows |
+| **Benign** | Normal Traffic | Standard handshakes and data transfers |
 
-Repetitive small packets, typically targeting Port 22 (SSH) or 80/443.
+---
 
-Bot
+## 🛠️ Technology Stack
 
-Automated Botnet Activity
+### Backend
+- **Python 3.8+**
+- **Flask** (REST API)
+- **Flask-CORS**
+- **Socket Programming**
 
-Persistent heartbeat connections, long durations, specific C2 ports.
+### Machine Learning
+- **Random Forest Classifier**
+- **Scikit-learn**
+- **Pandas, NumPy**
+- **Joblib**
 
-Infiltration
+### Frontend
+- **React 18.x**
+- **Tailwind CSS**
+- **Lucide Icons**
 
-Backdoor/Exploit attempts
+### Dataset
+- **CSE-CIC-IDS2018** (Canadian Institute for Cybersecurity)
 
-Stealthy, low packet count, very long durations (data exfiltration).
+---
 
-PortScan
+## 📁 Project Structure
 
-Network Reconnaissance
-
-Sequential or random port probing to find vulnerabilities.
-
-Web Attack
-
-Phishing/Malware sites
-
-URL-based heuristics combined with anomalous download flows.
-
-Benign
-
-Safe/Normal Traffic
-
-Standard handshakes and data transfer patterns.
-
-🛠️ Technology Stack
-
-Backend: Python 3.8+, Flask (REST API), Flask-CORS, Socket.
-
-Machine Learning: Random Forest Classifier, Scikit-Learn, Pandas, NumPy, Joblib.
-
-Frontend: React (18.x), Tailwind CSS, Lucide Icons.
-
-Dataset: CSE-CIC-IDS2018 (Canadian Institute for Cybersecurity).
-
-📁 Project Structure
-
+```text
 AI_Threat_Analysis_NIDS/
 ├── server.py                 # Flask API & Hybrid ML Logic
-├── threat_scanner_v4.html    # Professional React/Tailwind Dashboard
+├── threat_scanner_v4.html    # React + Tailwind Dashboard
 ├── requirements.txt          # Project dependencies
-├── threat_logs.csv           # Auto-generated security audit logs
-├── models/                   # ML Artifacts
-│   ├── model.pkl             # Trained Random Forest Model
-│   ├── scaler.pkl            # Pre-trained StandardScaler
-│   └── feature_columns.txt   # List of 78 required features
-├── src/                      # Data Pipeline Source
+├── threat_logs.csv           # Auto-generated audit logs
+├── models/
+│   ├── model.pkl             # Trained Random Forest model
+│   ├── scaler.pkl            # StandardScaler
+│   └── feature_columns.txt   # 78 required features
+├── src/
 │   ├── data_preprocessing.py # Feature engineering
-│   └── model_training.py     # Training script
+│   └── model_training.py     # Training pipeline
 └── README.md                 # Project documentation
 
-
-⚙️ How It Works (The Hybrid Pipeline)
-
-The system follows a 5-step analysis pipeline to maintain technical accuracy:
-
-Ingestion (Layer 7): The user provides a URL. The system parses the hostname and resolves it to a physical IP address.
-
-Simulation (The Bridge): Based on the URL's characteristics, the system generates a 78-dimensional network flow vector, mimicking the metadata generated by a real packet sniffer.
-
-ML Inference (The Brain): The vector is normalized using a StandardScaler and passed through the Random Forest model.
-
-Risk Evaluation: The system compares the prediction against "Security Context." If the AI is 99% sure it's "Benign," it is safely labeled as Low Risk. If it detects an attack, the Risk Level is weighted by the confidence score.
-
-Exposition (The UI): The results are rendered with "Security Educator" tooltips, helping the user understand the link between the packets and the threat.
-
-📦 Installation & Setup
-
-Prerequisites
-
-Python 3.8 or higher
-
-pip or conda
-
-Step-by-Step Installation
-
-Clone the Repo:
-
-git clone [https://github.com/yourusername/AI_Threat_Analysis_NIDS.git](https://github.com/yourusername/AI_Threat_Analysis_NIDS.git)
-cd AI_Threat_Analysis_NIDS
+## ⚙️ How It Works — Hybrid Pipeline
 
 
 
-Environment Setup:
+1. **Ingestion (Layer 7)**: User submits a URL. The system extracts the hostname and resolves it to an IP address.
+2. **Simulation (The Bridge)**: A **78-dimensional network flow vector** is generated to simulate packet-sniffer metadata.
+3. **ML Inference (The Brain)**: The flow vector is normalized using `StandardScaler` and passed to the Random Forest model.
+4. **Risk Evaluation**: 
+   - **Benign predictions** → Low Risk
+   - **Attacks** → Risk weighted by model confidence
+5. **Exposition (The UI)**: Results are visualized with **Security Educator tooltips**, explaining packet-level behavior.
+
+---
+
+## 📦 Installation & Setup
+
+### Prerequisites
+* Python 3.8+
+* pip or conda
+
+### Step-by-Step Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone [https://github.com/yourusername/AI_Threat_Analysis_NIDS.git](https://github.com/yourusername/AI_Threat_Analysis_NIDS.git)
+   cd AI_Threat_Analysis_NIDS
+Create Virtual Environment
+
+Bash
 
 python -m venv .venv
-# Windows:
+Activate Environment
+
+Windows:
+
+Bash
+
 .venv\Scripts\activate
-# Mac/Linux:
+Mac / Linux:
+
+Bash
+
 source .venv/bin/activate
+Install Dependencies
 
-
-
-Install Dependencies:
+Bash
 
 pip install -r requirements.txt
+Run Backend Server
 
-
-
-Run Backend Server:
+Bash
 
 python server.py
-
-
-
-Launch Dashboard:
-Simply open threat_scanner_v4.html in your browser.
+Launch Dashboard Open threat_scanner_v4.html in your browser.
 
 📡 API Documentation
-
 POST /analyze
 
 Request Payload:
 
+JSON
+
 {
   "url": "[http://target.com/dos-attack](http://target.com/dos-attack)"
 }
-
-
-
 Successful Response:
+
+JSON
 
 {
   "verdict": "MALICIOUS",
@@ -181,31 +174,31 @@ Successful Response:
     "protocol": "TCP (6)"
   }
 }
-
-
-
 ⚠️ Troubleshooting
+Backend Connection Failed: Ensure server.py is running. Look for ✅ Model loaded in terminal. Ensure port 5000 is not in use.
 
-Backend Connection Failed: Ensure server.py is running and your terminal shows ✅ Model loaded. Check that the port (5000) is not being used by another application.
+CORS Errors: Verify flask-cors is installed and initialized in the app.
 
-CORS Errors: The Flask server uses flask-cors. Ensure it is installed via requirements.txt.
-
-Model Accuracy: For the best results, ensure model.pkl and scaler.pkl are located in the models/ directory.
+Model Accuracy Issues: Confirm model.pkl and scaler.pkl exist in the models/ directory.
 
 🎯 Future Roadmap
+[ ] Live Packet Sniffing (Scapy integration)
 
-[ ] Live Packet Sniffing: Integrate scapy for real-time traffic analysis.
+[ ] Real-time Threat Visualization
 
-[ ] Threat Visualization: Add real-time line charts for packet volume tracking.
+[ ] SIEM Integration (Splunk / ELK)
 
-[ ] SIEM Integration: Export logs directly to Splunk or ELK stack.
+[ ] Dockerized Deployment
+
+[ ] Cloud-Based Scaling
 
 🤝 Acknowledgments
+CSE-CIC-IDS2018 Dataset – Canadian Institute for Cybersecurity
 
-CSE-CIC-IDS2018 Dataset: Provided by the Canadian Institute for Cybersecurity for research and educational purposes.
+Scikit-learn & Flask Communities
 
-Scikit-Learn & Flask Communities: For providing the robust frameworks that power this system's intelligence and connectivity.
+Cybersecurity Research Community
 
-Cybersecurity Community: For the continuous inspiration to build tools that make the digital world safer.
+🛡️ AI-NIDS PRO | Built for the next generation of Cybersecurity Professionals
 
-🛡️ AI-NIDS PRO | Built for the next generation of Cybersecurity Professionals.
+
