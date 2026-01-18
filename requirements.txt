@@ -1,0 +1,24 @@
+# AI Threat Analysis NIDS - Python Dependencies
+
+# Core Data Processing
+pandas>=1.5.0,<2.2.0
+numpy>=1.23.0,<2.0.0
+
+# Machine Learning
+scikit-learn>=1.7.0,<1.8.0
+
+# Model Persistence
+joblib>=1.2.0
+
+# Data Visualization
+matplotlib>=3.6.0,<3.9.0
+
+# Class Balancing (Optional - for SMOTE)
+imbalanced-learn>=0.10.0,<0.12.0
+
+# Web Framework
+flask>=2.3.0,<4.0.0
+flask-cors>=4.0.0  # For Cross-Origin Resource Sharing
+
+# Additional utilities
+pathlib>=1.0.1  # Built-in for Python 3.4+, listed for clarity
